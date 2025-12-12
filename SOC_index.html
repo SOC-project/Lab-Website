@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tech Company - Innovating the Future</title>
+<title>AI-SOC</title>
 <style>
 /* === Base styles (kept) === */
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -55,7 +55,7 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 .cta-button::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:left .5s ease;}
 .cta-button:hover::before{left:100%;}
 
-.background-visual{position:absolute;top:0;left:0;width:100%;height:100%;background-image:url("/static/background.png");background-size:cover;background-repeat:no-repeat;background-position:center;opacity:.3;z-index:1;}
+.background-visual{position:absolute;top:0;left:0;width:100%;height:100%;background-image:url("/assets/img/background.png");background-size:cover;background-repeat:no-repeat;background-position:center;opacity:.3;z-index:1;}
 .particle{position:absolute;background:rgba(59,130,246,.6);border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite;}
 .particle:nth-child(1){width:4px;height:4px;top:20%;left:15%;animation-delay:0s;}
 .particle:nth-child(2){width:6px;height:6px;top:40%;left:25%;animation-delay:1s;}
@@ -332,8 +332,6 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
     <li onclick="navigate('home')">Home</li>
     <li onclick="navigate('about')">About</li>
     <li onclick="navigate('services')">Services</li>
-    <li onclick="showProducts()">Products</li>
-    <li onclick="showContact()">Contact</li>
   </ul>
 </nav>
 
@@ -442,101 +440,9 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
   </div>
 </section>
 
-<!-- PRODUCTS OVERLAY -->
-<div id="products-page" class="overlay" aria-hidden="true">
-  <div class="overlay-inner">
-    <div class="panel">
-      <div class="products-header">
-        <h2 class="products-title">Products</h2>
-      </div>
 
-      <!-- Product 1: TP Protocol Fuzzing Suite -->
-      <div class="card">
-        <h3>TP Protocol Fuzzing Suite</h3>
-        <p class="section-subtitle">
-          High-volume fuzz testing for RTP, RTCP, RTSP, and TLS — up to 100,000 cases per run, with reproducible logs.
-        </p>
-        <div class="tags">
-          <span class="tag">RTP</span><span class="tag">RTCP</span><span class="tag">RTSP</span><span class="tag">TLS</span>
-          <span class="tag">Randomized Cases</span><span class="tag">Log Evidence</span>
-        </div>
-        <div class="actions">
-          <button class="btn btn-primary" onclick="toggleDetails('tp-details')">View details</button>
-          <button class="btn btn-ghost" onclick="showContact()">Contact to Purchase</button>
-        </div>
 
-        <div id="tp-details" class="details">
-          <h4>Overview</h4>
-          <ul>
-            <li><b>Distribution per Run (100k):</b> Bit-bounded sampling by field size. Example: a 32-bit timestamp ~40,000 randomized cases; a 16-bit field ~20,000. Ratios informed by prior research.</li>
-            <li><b>Targeting:</b> Tests iterate fields/commands sequentially; direct single-field/command targeting isn’t supported.</li>
-            <li><b>Uniqueness Evidence:</b> One full run executed; see <code>log.txt</code> for unique entries (per protocol notes below).</li>
-          </ul>
 
-          <h4>RTP</h4>
-          <ul>
-            <li>Distribution: as above (e.g., 32-bit timestamp ~40k).</li>
-            <li>Targeting: sequential only.</li>
-            <li>Uniqueness: evidence in <code>log.txt</code>.</li>
-            <li>Connectivity Loss: connectionless; diagnose via device logs or Wireshark—program cannot infer loss itself.</li>
-            <li>Packet Recording: logs contain the full packet content required to reproduce frames; Wireshark’s leading link/endpoint headers are auxiliary.</li>
-          </ul>
-
-          <h4>RTCP</h4>
-          <ul>
-            <li>Distribution/Targeting: same as RTP.</li>
-            <li>Uniqueness: full-run evidence in <code>log.txt</code>.</li>
-            <li>Connectivity Loss: connectionless; use device logs / Wireshark.</li>
-            <li>Packet Recording: same rationale as RTP.</li>
-          </ul>
-
-          <h4>RTSP</h4>
-          <ul>
-            <li>Distribution: cases allocated by command; each run shuffles/adds/removes/mutates commands.</li>
-            <li>Targeting: per-command isolation not supported; tested in order.</li>
-            <li>Uniqueness: see <code>log.txt</code>.</li>
-            <li>Connectivity Loss: connection-oriented; if the connection drops, the program stops—use timestamps to locate the triggering packet.</li>
-            <li>Recording: logs focus on command payloads; generic link headers aren’t required for reproduction.</li>
-          </ul>
-
-          <h4>TLS</h4>
-          <ul>
-            <li>Distribution: 50k fixed-header + 50k fully randomized.</li>
-            <li>Targeting: no direct jump to a specific field/strategy.</li>
-            <li>Uniqueness: a full 100k run wasn’t completed due to time; randomization mirrors RTP/RTCP.</li>
-            <li>Connectivity Loss: TLS over TCP—any disconnection interrupts transmission.</li>
-            <li>Logging/Wireshark:
-              <ul>
-                <li>Fixed-header phase: Wireshark identifies TLS; payloads encrypted—correlate with timestamps.</li>
-                <li>Full-fuzz phase: mutated headers may appear as SSL; without encryption, payload bytes remain visible.</li>
-              </ul>
-            </li>
-          </ul>
-
-          <div class="actions" style="margin-top:20px">
-            <button class="btn btn-primary" onclick="showContact()">Contact to Purchase</button>
-            <button class="btn btn-ghost" onclick="toggleDetails('tp-details')">Hide details</button>
-          </div>
-        </div>
-      </div>
-      <!-- /Product 1 -->
-    </div>
-  </div>
-</div>
-
-<!-- CONTACT OVERLAY -->
-<div id="contact-page" class="overlay" aria-hidden="true">
-  <div class="overlay-inner">
-    <div class="panel contact-container">
-      <h2>Contact Us</h2>
-      <div class="contact-info">
-        📧 Email: <a href="mailto:suprematechnologiesltd@gmail.com">suprematechnologiesltd@gmail.com</a><br>
-        📱 Phone: <a href="tel:+886 929 517 001">+886 929 517 001</a>
-      </div>
-      <button class="back-button" onclick="hideContact()">← Back</button>
-    </div>
-  </div>
-</div>
 
 <script>
 // Navbar shadow on scroll
@@ -562,21 +468,12 @@ menuToggle.addEventListener('click',()=>{
 // Close menu on resize to desktop
 window.addEventListener('resize',()=>{ if(window.innerWidth>768) closeMenu(); });
 
-// Smooth navigation + close overlays + close mobile menu
+// Smooth navigation + close mobile menu
 function navigate(id){
-  hideContact(); hideProducts(); closeMenu();
+  closeMenu();
   const sec=document.getElementById(id);
   if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
 }
-
-// Overlays
-function showContact(){ hideProducts(); closeMenu(); const p=document.getElementById('contact-page'); p.style.display='block'; p.setAttribute('aria-hidden','false'); window.scrollTo(0,0); }
-function hideContact(){ const p=document.getElementById('contact-page'); p.style.display='none'; p.setAttribute('aria-hidden','true'); }
-function showProducts(){ hideContact(); closeMenu(); const p=document.getElementById('products-page'); p.style.display='block'; p.setAttribute('aria-hidden','false'); window.scrollTo(0,0); }
-function hideProducts(){ const p=document.getElementById('products-page'); p.style.display='none'; p.setAttribute('aria-hidden','true'); }
-
-// Product details toggle
-function toggleDetails(id){ const el=document.getElementById(id); if(el) el.classList.toggle('open'); }
 
 // Reveal on scroll
 function isElementInViewport(el){ const r=el.getBoundingClientRect(); const h=window.innerHeight||document.documentElement.clientHeight; return r.top<h*0.8 && r.bottom>0; }

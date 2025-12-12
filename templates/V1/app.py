@@ -5,8 +5,8 @@ app = Flask(__name__, static_folder="assets", static_url_path="/assets")
 
 @app.route("/")
 def home():
-    # 直接送根目錄下的 home_page.html
-    return send_from_directory(".", "home_page.html")
+    # 直接送根目錄下的 blog.html
+    return send_from_directory(".", "index.html")
 
 # 新增一個 route 來處理其他 HTML 頁面 (例如 about.html, contact.html)
 @app.route("/<path:name>")
@@ -19,5 +19,5 @@ def health():
     return "ok", 200
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 5001))
     app.run(host="0.0.0.0", port=port)

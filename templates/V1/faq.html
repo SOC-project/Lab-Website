@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Durral - Architecture & Interior HTML Template</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <!-- css include -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+    <!-- body wrap start -->
+    <div class="body_wrap">
+        <!-- Header Start -->
+        <header class="header-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-inn d-flex align-items-center justify-content-between">
+                            <div class="site-logo">
+                                <div class="d-flex align-items-center">
+                                    <a href="index.html">
+                                        <img src="assets/img/logo-icon.svg" alt="img" />
+                                    </a>
+                                    <p class="page_title">Faq</p>
+                                </div>
+                            </div>
+                            <div class="header-navigation d-flex align-items-center ">
+                                <div class="mainmenu">
+                                    <nav id="menu">
+                                        <ul class="dropdown">
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="about.html">About</a></li>
+                                            <li>
+                                                <a href="javascript:;">Project</a>
+                                                <ul>
+                                                    <li><a href="project.html">All Project</a></li>
+                                                    <li><a href="project-details.html">Project Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">Service</a>
+                                                <ul>
+                                                    <li><a href="service.html">All Service</a></li>
+                                                    <li><a href="service-details.html">Service Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="active">
+                                                <a href="javascript:;">Pages</a>
+                                                <ul>
+                                                    <li><a href="faq.html">FAQ Pages</a></li>
+                                                    <li><a href="error.html">404 Error</a></li>
+                                                    <li><a href="portfolio.html">Portfolio</a></li>
+                                                    <li><a href="comming-soon.html">Coming Soon</a></li>
+                                                    <li><a href="team.html">Team Member</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">Blog</a>
+                                                <ul>
+                                                    <li><a href="blog.html">All Blog</a></li>
+                                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="menu-toggle" id="toggle">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header End -->
+
+        <main>
+            <!-- Breadcrumb Start -->
+            <section class="breadcrumb-area faq-banner">
+                <div class="container">
+                    <div class="faq-heading text-center">
+                        <h1>FREQUENTLY ASKED QUESTIONS</h1>
+                        <p>Share the details of your idea. We will connect with you shortly and bring your idea in reality.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Breadcrumb End -->
+
+            <!-- Faq Start -->
+            <section class="faq-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 mx-auto">
+                            <div class="faq-box-heading text-center">
+                                <h3>HAVE YOU ANY QUESTION?</h3>
+                            </div>
+                            <div class="project-tab mt-5">
+                                <ul class="nav nav-tabs" id="projectTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="project-all" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                                            <span><img src="assets/img/general.svg" alt="img"></span>
+                                            <span>General</span>
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="project-tab-2" data-bs-toggle="tab" data-bs-target="#project-2" type="button" role="tab" aria-controls="project-tab-2" aria-selected="false">
+                                            <span><img src="assets/img/service-1.svg" alt="img"></span>
+                                            <span>Service</span>
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="project-tab-3" data-bs-toggle="tab" data-bs-target="#project-3" type="button" role="tab" aria-controls="project-tab-3" aria-selected="false">
+                                            <span><img src="assets/img/payment.svg" alt="img"></span>
+                                            <span>Payment</span>
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="project-tab-4" data-bs-toggle="tab" data-bs-target="#project-4" type="button" role="tab" aria-controls="project-tab-4" aria-selected="false">
+                                            <span><img src="assets/img/shop.svg" alt="img"></span>
+                                            <span>Shop</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content mt-5" id="projectTabContent">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="project-all">
+                                        <div class="faq-accordion">
+                                            <div class="accordion" id="accordion3">
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="heading1">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1" aria-expanded="false" aria-controls="heading1">
+                                                            Amet minim mollit non deserunt ullamco est sit aliqua dolor?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="c1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="heading2">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2" aria-expanded="false" aria-controls="heading2">
+                                                            Amet minim mollit non?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="c2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="heading3">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3" aria-expanded="false" aria-controls="heading3">
+                                                            How can i make it copy interior?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="c3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="heading4">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4" aria-expanded="false" aria-controls="heading4">
+                                                            Amet minim mollit non deserunt ullamco?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="c4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="heading5">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5" aria-expanded="false" aria-controls="heading5">
+                                                            Amet minim mollit non deserunt?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="c5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="project-2" role="tabpanel" aria-labelledby="project-tab-2">
+                                        <div class="faq-accordion">
+                                            <div class="accordion" id="accordion22">
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="headingOne2">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="false" aria-controls="collapseOne2">
+                                                            How to contact with your agent?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseOne2" class="accordion-collapse collapse" aria-labelledby="headingOne2" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="headingTwo2">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                                                            How can i install this theme?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseTwo2" class="accordion-collapse collapse" aria-labelledby="headingTwo2" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="headingThree2">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree2" aria-expanded="false" aria-controls="collapseThree2">
+                                                            How can i make it copy interior?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseThree2" class="accordion-collapse collapse" aria-labelledby="headingThree2" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="headingFour2">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour2" aria-expanded="false" aria-controls="collapseFour2">
+                                                            How to despout on this product?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseFour2" class="accordion-collapse collapse" aria-labelledby="headingFour2" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="headingFive2">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive2" aria-expanded="false" aria-controls="collapseFive2">
+                                                            How to despout on this product?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseFive2" class="accordion-collapse collapse" aria-labelledby="headingFive2" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="project-3" role="tabpanel" aria-labelledby="project-tab-3">
+                                        <div class="faq-accordion">
+                                            <div class="accordion" id="accordion">
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="heading31">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c31" aria-expanded="false" aria-controls="heading31">
+                                                            How to contact with your agent?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="c31" class="accordion-collapse collapse" aria-labelledby="heading31" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="heading32">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c32" aria-expanded="false" aria-controls="heading32">
+                                                            How can i install this theme?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="c32" class="accordion-collapse collapse" aria-labelledby="heading32" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="heading33">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c33" aria-expanded="false" aria-controls="heading33">
+                                                            How can i make it copy interior?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="c33" class="accordion-collapse collapse" aria-labelledby="heading33" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="heading34">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c34" aria-expanded="false" aria-controls="heading34">
+                                                            How to despout on this product?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="c34" class="accordion-collapse collapse" aria-labelledby="heading34" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="heading35">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c35" aria-expanded="false" aria-controls="heading35">
+                                                            How to despout on this product?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="c35" class="accordion-collapse collapse" aria-labelledby="heading35" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="project-4" role="tabpanel" aria-labelledby="project-tab-4">
+                                        <div class="faq-accordion">
+                                            <div class="accordion" id="accordion4">
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="heading41">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c41" aria-expanded="false" aria-controls="heading41">
+                                                            How to contact with your agent?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="c41" class="accordion-collapse collapse" aria-labelledby="heading41" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="heading42">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c42" aria-expanded="false" aria-controls="heading42">
+                                                            How can i install this theme?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="c42" class="accordion-collapse collapse" aria-labelledby="heading42" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="heading43">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c43" aria-expanded="false" aria-controls="heading43">
+                                                            How can i make it copy interior?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="c43" class="accordion-collapse collapse" aria-labelledby="heading43" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="heading44">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c44" aria-expanded="false" aria-controls="heading44">
+                                                            How to despout on this product?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="c44" class="accordion-collapse collapse" aria-labelledby="heading44" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="heading45">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c45" aria-expanded="false" aria-controls="heading45">
+                                                            How to despout on this product?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="c45" class="accordion-collapse collapse" aria-labelledby="heading45" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            <p>craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Faq End -->
+
+            <!-- Footer Start -->
+            <footer class="footer-area">
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="footer-widget">
+                                    <div class="footer-contact">
+                                        <div class="footer-logo">
+                                            <a href="index.html">
+                                                <img src="assets/img/logo-light.svg" alt="img" />
+                                            </a>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <p>2715 Ash Dr. San Jose,<br>South Dakota 83475</p>
+                                            </li>
+                                            <li>
+                                                <p>+91 9876543210</p>
+                                            </li>
+                                            <li>
+                                                <p>info@example.com</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6">
+                                <div class="footer-widget">
+                                    <div class="footer-link">
+                                        <h3>Menu</h3>
+                                        <ul>
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="service.html">Services</a></li>
+                                            <li><a href="portfolio.html">Portfolio</a></li>
+                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="contact.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6">
+                                <div class="footer-widget">
+                                    <div class="footer-link">
+                                        <h3>More</h3>
+                                        <ul>
+                                            <li><a href="index.html">Privacy Policy</a></li>
+                                            <li><a href="about.html">Terms & Conditions</a></li>
+                                            <li><a href="service-details.html">Service Policy</a></li>
+                                            <li><a href="service-details.html">Cookies Policy</a></li>
+                                            <li><a href="about.html">Careers</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="footer-widget">
+                                    <div class="footer-newslatter">
+                                        <h3>Subscribe to Newsletter</h3>
+                                        <div class="footer-newsletter-form">
+                                            <form>
+                                                <input type="email" placeholder="Email Address" />
+                                                <button type="submit">
+                                                    <svg width="46" height="14" viewBox="0 0 46 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M44 7L44.5303 7.53033L45.0607 7L44.5303 6.46967L44 7ZM37.4697 1.53033L43.4697 7.53033L44.5303 6.46967L38.5303 0.469669L37.4697 1.53033ZM43.4697 6.46967L37.4697 12.4697L38.5303 13.5303L44.5303 7.53033L43.4697 6.46967Z" fill="#fff" />
+                                                        <path d="M2.38399e-08 7.75L44 7.75L44 6.25L-2.38399e-08 6.25L2.38399e-08 7.75Z" fill="#fff" />
+                                                    </svg>
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <div class="footer-social">
+                                            <ul>
+                                                <li><a href="javascript:;"><i class="fab fa-facebook-square"></i></a></li>
+                                                <li><a href="javascript:;"><i class="fab fa-whatsapp"></i></a></li>
+                                                <li><a href="javascript:;"><i class="fab fa-dribbble"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <ul class="footer-copyright text-center">
+                        <li>
+                            <p>2025 &copy; All Rights Reserved. <a target="_blank" href="https://www.mobanwang.com/" title="网站模板">网站模板</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+            <!-- Footer End -->
+        </main>
+    </div>
+    <!-- body wrap end -->
+
+    <!-- jquery include -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/masonry.pkgd.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/jquery.waypoints.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
