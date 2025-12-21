@@ -68,9 +68,14 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 .content-section.visible{opacity:1;transform:translateY(0);}
 .section-title{font-size:2.5rem;color:#1e293b;margin-bottom:30px;text-align:center;}
 .section-content{font-size:1.1rem;line-height:1.8;color:#64748b;text-align:center;margin-bottom:50px;}
-.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:50px;}
-.feature-card{background:rgba(255,255,255,.8);padding:40px 30px;border-radius:20px;text-align:center;transition:all .3s ease;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);}
-.feature-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,.1);}
+.section-content-ul{font-size:1.1rem;line-height:1.8;color:#64748b;text-align:left;margin-bottom:50px;}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:30px;margin-top:50px;}
+.feature-card {background: white;border-radius: 16px;padding: 32px;box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);border: 1px solid rgba(0,0,0,0.05);display: flex;flex-direction: column;align-items: flex-start;transition: transform 0.2s;}
+.feature-card:hover {transform: translateY(-5px);box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);}
+.feature-card h3 {margin: 0 0 16px 0;color: #1f2937;font-size: 1.25rem;}
+.feature-card p{color:#4b5563;line-height:1.6;}
+.feature-card ul {padding-left: 20px;margin: 0;color: #4b5563;line-height: 1.6;font-size: 0.95rem;}
+.feature-card li {margin-bottom: 12px;}
 .feature-describe{color:#00398a;line-height:1.6;margin-top:15px;}
 .feature-icon{width:60px;height:60px;background:linear-gradient(45deg,#3b82f6,#1d4ed8);border-radius:50%;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;}
 
@@ -87,9 +92,6 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 /* Products styles */
 .products-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px;}
 .products-title{font-size:2rem;color:#1e293b;}
-.card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:24px;margin-top:12px;}
-.card h3{margin-bottom:8px;color:#111827;}
-.card p{color:#4b5563;line-height:1.6;}
 .tags{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;}
 .tag{font-size:.8rem;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;border-radius:999px;padding:6px 10px;}
 .actions{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;}
@@ -113,64 +115,6 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 @keyframes slideInLeft{from{opacity:0;transform:translateX(-50px);}to{opacity:1;transform:translateX(0);}}
 @keyframes float{0%,100%{transform:translateY(0);opacity:.4;}50%{transform:translateY(-20px);opacity:1;}}
 
-/* Architecture Diagram Styles */
-.architecture-diagram {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px; /* Increased gap */
-  margin-top: 50px;
-  font-family: 'Arial', sans-serif;
-  transform: scale(1.1); /* Slight overall scale */
-  transform-origin: top center;
-  margin-bottom: 60px; /* Compensate for scale */
-}
-
-.arch-col-left {
-  display: flex;
-  flex-direction: column;
-  gap: 40px; /* Increased gap */
-  width: 320px; /* Increased width */
-}
-
-.arch-col-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-  max-width: 700px; /* Increased width */
-  width: 100%;
-}
-
-.arch-box {
-  background: #e8f5e9; /* Light green */
-  border: 2px solid #81c784; /* Green border */
-  border-radius: 16px;
-  padding: 25px; /* Increased padding */
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.arch-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  cursor: pointer;
-}
-
-.arch-box h3 {
-  font-size: 1.5rem; /* Larger font */
-  color: #2e7d32;
-  margin-bottom: 15px;
-}
-
-.arch-box h4 {
-  font-size: 1.3rem; /* Larger font */
-  color: #2e7d32;
-  margin-bottom: 12px;
-}
-
 .sub-buttons {
   display: flex;
   flex-direction: column;
@@ -190,94 +134,83 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 }
 .sub-btn:hover { background: #b39ddb; }
 
-/* Arrows */
-.arch-arrows-center {
+body { background-color: #0d1117; font-family: sans-serif; padding: 40px; }
+
+/* --- 1. 終端機區塊 (Code Block) --- */
+.terminal-window {
+  background-color: #161b22; /* 深灰背景 */
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  font-family: 'Consolas', 'Monaco', monospace;
+}
+
+.terminal-header {
+  background-color: #21262d;
+  padding: 8px 16px;
+  border-bottom: 1px solid #30363d;
+  color: #c9d1d9;
+  font-size: 0.85rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 140px; /* Increased gap to match left boxes */
-  align-items: center;
-  color: #555;
-  font-weight: bold;
-  font-size: 1.1rem;
-  position: relative;
+  justify-content: space-between;
 }
 
-.arrow-right {
-  width: 70px; /* Longer arrow */
-  height: 24px; /* Thicker arrow */
-  background: #ffcc80; /* Orange arrow */
-  position: relative;
-}
-.arrow-right::after {
-  content: '';
-  position: absolute;
-  right: -18px;
-  top: -12px;
-  border-left: 18px solid #ffcc80;
-  border-top: 24px solid transparent;
-  border-bottom: 24px solid transparent;
+.terminal-body {
+  padding: 16px;
+  color: #c9d1d9;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
-.arrow-label {
-  position: absolute;
-  text-align: center;
-  width: 140px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255,255,255,0.8);
-  padding: 8px;
-  border-radius: 5px;
+/* 語法高亮模擬 (通常使用 highlight.js，這裡手刻 CSS) */
+.code-comment { color: #8b949e; } /* 註解灰色 */
+.code-command { color: #e2e4e9; font-weight: bold; } /* 指令白色 */
+.code-string { color: #a5d6ff; } /* 字串藍色 */
+.code-flag { color: #79c0ff; } /* 參數淺藍 */
+
+/* --- 2. 參數表格 (Arguments Table) --- */
+.args-table-container {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 20px;
+  color: #c9d1d9;
 }
 
-/* AI SOC Box */
-.ai-soc-container {
-  background: #e8f5e9;
+.args-table {
   width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px; /* 表格行之間的間距 */
 }
 
-.ai-soc-content {
-  display: flex;
-  gap: 25px;
-  margin-top: 25px;
-}
-
-.orange-box {
-  flex: 1;
-  background: #ffe0b2; /* Light orange */
-  border: 2px solid #ffb74d;
-  border-radius: 12px;
-  padding: 20px; /* Increased padding */
+.args-table th {
   text-align: left;
-  transition: transform 0.2s;
+  color: #f0f6fc;
+  font-size: 1.1rem;
+  padding-bottom: 10px;
 }
-.orange-box:hover { transform: scale(1.03); cursor: pointer; }
-.orange-box h4 { color: #e65100; font-size: 1.2rem; text-align: center; margin-bottom: 10px; }
-.orange-box ul { padding-left: 25px; color: #bf360c; font-size: 1.05rem; line-height: 1.7; }
 
-/* Vertical Arrow */
-.arrow-vertical-container {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  color: #2e7d32;
-  font-weight: bold;
-  font-size: 1.2rem;
+.args-table td {
+  vertical-align: top;
+  padding: 8px 0;
 }
-.arrow-double-vertical {
-  width: 24px;
-  height: 50px;
-  background: #66bb6a;
-  position: relative;
+
+/* 參數標籤樣式 (那些看起來像按鈕的東西) */
+.arg-tag {
+  display: inline-block;
+  background-color: #2b313a; /* 標籤背景 */
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.9rem;
 }
-.arrow-double-vertical::before {
-  content: ''; position: absolute; top: -12px; left: -12px;
-  border-bottom: 12px solid #66bb6a; border-left: 24px solid transparent; border-right: 24px solid transparent;
-}
-.arrow-double-vertical::after {
-  content: ''; position: absolute; bottom: -12px; left: -12px;
-  border-top: 12px solid #66bb6a; border-left: 24px solid transparent; border-right: 24px solid transparent;
+
+.desc-text {
+  color: #8b949e;
+  padding-left: 20px;
 }
 
 /* Mobile */
@@ -329,9 +262,9 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
   </button>
 
   <ul class="nav-links" id="navLinks">
-    <li onclick="navigate('home')">Home</li>
-    <li onclick="navigate('about')">About</li>
-    <li onclick="navigate('services')">Services</li>
+    <li onclick="window.location='SOC_index.html'">Home</li>
+    <li onclick="navigate('overview')">Overview</li>
+    <li onclick="navigate('usage guide')">Usage Guide</li>
   </ul>
 </nav>
 
@@ -339,10 +272,10 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 <section class="hero-section" id="home">
   <div class="content-wrapper">
     <div class="text-content">
-      <h1 class="main-title">AI Security Operation Center<br>Leading the Future</h1>
+      <h1 class="main-title">CfgScanner: Next-Generation Memory Forensics & Malware Hunting Tool</h1>
       <p class="subtitle">
-        We propose an integrated Security Operations Center (SOC) architecture tailored to the cybersecurity needs of enterprises and organizations, 
-        combining threat analysis, AI-driven automated security monitoring, and incident response mechanisms to address the current challenges of fragmented systems and difficult coordination.
+        Deep dive into volatile memory. Leverage YARA rules and Control Flow Guard (CFG) anomaly detection
+        to hunt down stealthy process injections and Cobalt Strike beacons.
       </p>
       <button class="cta-button" onclick="navigate('about')">Start Exploring</button>
     </div>
@@ -353,95 +286,145 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 </section>
 
 <!-- About -->
-<section class="content-section" id="about">
-  <h2 class="section-title">About Us</h2>
+<section class="content-section" id="overview">
+  <h2 class="section-title">Overview</h2>
   <p class="section-content">
-    Our product mainly comprises the following three key features:
+    CfgScanner is a high-performance memory scanner engineered specially for the Windows platform. Unlike
+    traditional antivirus solutions that primarily scan the file system, CfgScanner focuses on the runtime
+    memory space of the active processes.
+    It combines the pattern-matching power of YARA with advanced Windows Control Flow Guard (CFG) bitmap 
+    analysis. This dual-engine approach allows it to effectively detect Process Injection, Shellcode exection,
+    and "Fileless" malware hiding in the memory. Additionally, it features bulit-in forensics capabilities for
+    parsing Cobalt Strike configurations directly from infected process memory.
+    Our product mainly comprises the following five key features:
   </p>
   <div class="features-grid">
-    <div class="feature-card"><div class="feature-icon">⚙️</div><h3>Automated Workflows</h3><p class="feature-describe">Automated collection, storage, analysis, and alerting of security events through an AI-SOC security monitoring center.</p></div>
-    <div class="feature-card"><div class="feature-icon">🔍</div><h3>Advanced Tools</h3><p class="feature-describe">Some extra detection and scanning tools our team developed, and all cybersecurity tools can be integrated into our system. These can also be sold separately.</p></div>
-    <div class="feature-card"><div class="feature-icon">🧠</div><h3>LLM Integration</h3><p class="feature-describe">Integrating AI LLM models with messaging and communication apps</p></div>
+    <div class="feature-card"><div class="feature-icon">⚙️</div><h3>CFG-Based Anomaly Detection</h3>
+        <p class="feature-describe">Leverages the Windows kernel's Control Flow Guard (CFG) mechanism to identify suspicious memory regions.
+            <ul class="feature-describe">
+                <li><strong>Deep Analysis:</strong> Directly parses ntdll.dll CFG Bitmaps to identify suspicious memory pages.</li>
+                <li><strong>Target:</strong> Uncovers hidden MEM_PRIVATE executable regions attempting to bypass security via VirtualAlloc.</li>
+            </ul>
+        </p>
+    </div>
+    <div class="feature-card"><div class="feature-icon">🔍</div><h3>Multi-Threaded YARA Scanning</h3>
+      <ul class="feature-describe">
+          <li><strong>Engine:</strong> Built on libyara with support for custom .yar rule sets.</li>
+          <li><strong>Performance:</strong> Tunable multi-threaded architecture ensures stability and speed during full-system memory scans.</li>
+      </ul>
+    </div>
+    <div class="feature-card"><div class="feature-icon">🧠</div><h3>Cobalt Strike Forensics</h3>
+      <ul class="feature-describe">
+          <li><strong>Auto-Response:</strong> Triggered instantly upon detecting "cobaltstrike" signatures.</li>
+          <li><strong>Extraction:</strong> Decodes C2 configs (User-Agents, Sleep times) directly from memory artifacts using integrated Python parsers.</li>
+      </ul>
+    </div>
+    <div class="feature-card"><div class="feature-icon"></div><h3>Process Behavior & Ancestry Analysis</h3>
+      <ul class="feature-describe">
+          <li><strong>Heuristics:</strong> Flags suspicious lineage (e.g., Office apps spawning unrelated processes) to stop Macro attacks.</li>
+          <li><strong>Validation:</strong> Detects SYSTEM privilege abuse and path spoofing in sensitive directories like System32.</li>
+      </ul>
+    </div>
+    <div class="feature-card"><div class="feature-icon"></div><h3>Automated Response & Reporting</h3>
+      <ul class="feature-describe">
+          <li><strong>Kill Switch:</strong> Automatically terminates processes matching high-severity rules.</li>
+          <li><strong>Forensics:</strong> Dumps suspicious memory regions to .dmp files for offline reverse engineering.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<!-- Services -->
-<section class="content-section" id="services">
-  <h2 class="section-title">Our Architecture</h2>
+<!-- Usage Guide -->
+<section class="content-section" id="usage guide">
+  <h2 class="section-title">Usage Guide</h2>
   <p class="section-content">
-    Our goal is to simplify and centralize the company’s daily security events. 
-    We match each incident against global threat-intel sharing platforms to quickly see whether the company is exposed to the latest vulnerabilities.
-    We also built extra tools to cover the gaps in existing security products, and, through AI integration with messaging apps,
-    provide an interactive channel for security alerts and threat information.
+    CfgScanner is a command-line interface (CLI) tool designed for flexibility in Incident Response (IR) scenarios.
   </p>
   
-  <div class="architecture-diagram">
-    <!-- Left Column -->
-    <div class="arch-col-left">
-      <div class="arch-box" onclick="alert('Existing Products Clicked')">
-        <h4>Existing Security Products / EDR</h4>
-        <p>Antivirus, Firewalls, etc.</p>
+  <div class="terminal-window">
+    <div class="terminal-header">
+      <span>Bash</span>
+      <span>📋</span>
+    </div>
+    <div class="terminal-body">
+      <div class="code-line">
+        <span class="code-comment"># Basic Usage: Scan all processes</span><br>
+        <span class="code-command">CfgScanner.exe</span> <span class="code-flag">-a</span>
       </div>
-      
-      <div class="arch-box" style="padding-bottom: 10px;">
-        <h4>Proprietary Software</h4>
-        <div class="sub-buttons">
-          <div class="sub-btn" onclick="alert('Anti-Ransomware Clicked')">Anti-Ransomware</div>
-          <div class="sub-btn" onclick="window.location='cfgscan.html'">Cfg Scan</div>
-          <div class="sub-btn" onclick="window.location='webshell.html'">Webshell Detection</div>
-          <div class="sub-btn" onclick="alert('Fuzzing Clicked')">Fuzzing Test</div>
-        </div>
+      <br>
+      <div class="code-line">
+        <span class="code-comment"># Scan a specific PID with verbose output</span><br>
+        <span class="code-command">CfgScanner.exe</span> <span class="code-flag">-p</span> 1234 <span class="code-flag">-v</span>
+      </div>
+      <br>
+      <div class="code-line">
+        <span class="code-comment"># Enable Cobalt Strike config extraction with 10 scanning threads</span><br>
+        <span class="code-command">CfgScanner.exe</span> <span class="code-flag">-a -c -t</span> 10
+      </div>
+      <br>
+      <div class="code-line">
+        <span class="code-comment"># Specify a custom output directory</span><br>
+        <span class="code-command">CfgScanner.exe</span> <span class="code-flag">-a -o</span> <span class="code-string">"C:\Forensics\Reports"</span>
       </div>
     </div>
-  
-    <!-- Middle Arrows (Desktop) -->
-    <div class="arch-arrows-center">
-      <div class="arrow-right"></div>
-      <div class="arrow-label">Data<br>Integration</div>
-      <div class="arrow-right"></div>
     </div>
-  
-    <!-- Right Column -->
-    <div class="arch-col-right">
-      <!-- AI SOC -->
-      <div class="arch-box ai-soc-container">
-        <h3>AI-SOC Security Monitoring Center</h3>
-        <div class="ai-soc-content">
-          <div class="orange-box" onclick="alert('Database Clicked')">
-            <h4>Security Event Database</h4>
-            <ul>
-              <li>Event Classification</li>
-              <li>Statistical Charts</li>
-              <li>Structured Query</li>
-            </ul>
-          </div>
-          <div class="orange-box" onclick="alert('Analysis Clicked')">
-            <h4>Intelligent Auto-Analysis</h4>
-            <ul>
-              <li>Global Threat Intelligence</li>
-              <li>Custom Alert Rules</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Vertical Arrow -->
-      <div class="arrow-vertical-container">
-        <div class="arrow-double-vertical"></div>
-        <span class="arrow-text">Alerts & Query</span>
-      </div>
-  
-      <!-- Communication -->
-      <div class="arch-box" onclick="alert('Communication Clicked')" style="width: 80%;">
-        <h4>Communication Integration</h4>
-        <p>Telegram, Line, etc.<br>Real-time Notifications<br>AI Chatbot</p>
-      </div>
-    </div>
+
+    <div class="args-table-container">
+    <h3>Arguments</h3>
+    <table class="args-table">
+      <thead>
+        <tr>
+          <th width="15%">Argument</th>
+          <th width="15%">Shorthand</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="arg-tag">--all</span></td>
+          <td><span class="arg-tag">-a</span></td>
+          <td class="desc-text">Scan all active processes on the system.</td>
+        </tr>
+        <tr>
+          <td><span class="arg-tag">--pid</span></td>
+          <td><span class="arg-tag">-p</span></td>
+          <td class="desc-text">Target a specific Process ID (PID) for scanning.</td>
+        </tr>
+        <tr>
+          <td><span class="arg-tag">--thread</span></td>
+          <td><span class="arg-tag">-t</span></td>
+          <td class="desc-text">Set the number of threads for parallel scanning.</td>
+        </tr>
+        <tr>
+          <td><span class="arg-tag">--config</span></td>
+          <td><span class="arg-tag">-c</span></td>
+          <td class="desc-text">Enable configuration extraction (Triggered on Cobalt Strike detection).</td>
+        </tr>
+        <tr>
+          <td><span class="arg-tag">--output</span></td>
+          <td><span class="arg-tag">-o</span></td>
+          <td class="desc-text">Specify the directory for log files and memory dumps.</td>
+        </tr>
+        <tr>
+          <td><span class="arg-tag">--quiet</span></td>
+          <td><span class="arg-tag">-q</span></td>
+          <td class="desc-text">Suppress console output (Silent mode).</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
-
-
+<section class="content-section" id="Why Choose CfgScanner?">
+  <h2 class="section-title">Why Choose CfgScanner?</h2>
+  <ul class="section-content-ul">
+    <li>Combat Fileless Threats: Traditional AV often misses malware that resides solely in memory. CfgScanner shines where static analysis fails.</li>
+    <li>Forensic Ready: Saves analysts time by automatically isolating and dumping the exact memory regions containing the malicious payload.</li>
+    <li>Extensible: Integrate your organization's private YARA feeds to detect bespoke threats immediately.</li>
+  </ul>
+  <hr>
+  <p class="section-content">Secure your memory space today with CfgScanner.</p>
+</section>
 
 
 <script>
@@ -504,5 +487,3 @@ document.head.appendChild(style);
 </script>
 </body>
 </html>
-
-

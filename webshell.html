@@ -68,9 +68,15 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 .content-section.visible{opacity:1;transform:translateY(0);}
 .section-title{font-size:2.5rem;color:#1e293b;margin-bottom:30px;text-align:center;}
 .section-content{font-size:1.1rem;line-height:1.8;color:#64748b;text-align:center;margin-bottom:50px;}
-.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:50px;}
-.feature-card{background:rgba(255,255,255,.8);padding:40px 30px;border-radius:20px;text-align:center;transition:all .3s ease;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);}
-.feature-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,.1);}
+.section-content-ul{font-size:1.1rem;line-height:1.8;color:#64748b;text-align:left;margin-bottom:50px;padding-left:20px;}
+.section-content-ul ul {padding-left:40px;list-style-type:circle;margin-top:5px;margin-bottom:5px;}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:30px;margin-top:50px;}
+.feature-card {background: white;border-radius: 16px;padding: 32px;box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);border: 1px solid rgba(0,0,0,0.05);display: flex;flex-direction: column;align-items: flex-start;transition: transform 0.2s;}
+.feature-card:hover {transform: translateY(-5px);box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);}
+.feature-card h3 {margin: 0 0 16px 0;color: #1f2937;font-size: 1.25rem;}
+.feature-card p{color:#4b5563;line-height:1.6;}
+.feature-card ul {padding-left: 20px;margin: 0;color: #4b5563;line-height: 1.6;font-size: 0.95rem;}
+.feature-card li {margin-bottom: 12px;}
 .feature-describe{color:#00398a;line-height:1.6;margin-top:15px;}
 .feature-icon{width:60px;height:60px;background:linear-gradient(45deg,#3b82f6,#1d4ed8);border-radius:50%;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;}
 
@@ -87,9 +93,6 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 /* Products styles */
 .products-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px;}
 .products-title{font-size:2rem;color:#1e293b;}
-.card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:24px;margin-top:12px;}
-.card h3{margin-bottom:8px;color:#111827;}
-.card p{color:#4b5563;line-height:1.6;}
 .tags{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;}
 .tag{font-size:.8rem;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;border-radius:999px;padding:6px 10px;}
 .actions{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;}
@@ -113,64 +116,6 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 @keyframes slideInLeft{from{opacity:0;transform:translateX(-50px);}to{opacity:1;transform:translateX(0);}}
 @keyframes float{0%,100%{transform:translateY(0);opacity:.4;}50%{transform:translateY(-20px);opacity:1;}}
 
-/* Architecture Diagram Styles */
-.architecture-diagram {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px; /* Increased gap */
-  margin-top: 50px;
-  font-family: 'Arial', sans-serif;
-  transform: scale(1.1); /* Slight overall scale */
-  transform-origin: top center;
-  margin-bottom: 60px; /* Compensate for scale */
-}
-
-.arch-col-left {
-  display: flex;
-  flex-direction: column;
-  gap: 40px; /* Increased gap */
-  width: 320px; /* Increased width */
-}
-
-.arch-col-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-  max-width: 700px; /* Increased width */
-  width: 100%;
-}
-
-.arch-box {
-  background: #e8f5e9; /* Light green */
-  border: 2px solid #81c784; /* Green border */
-  border-radius: 16px;
-  padding: 25px; /* Increased padding */
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.arch-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  cursor: pointer;
-}
-
-.arch-box h3 {
-  font-size: 1.5rem; /* Larger font */
-  color: #2e7d32;
-  margin-bottom: 15px;
-}
-
-.arch-box h4 {
-  font-size: 1.3rem; /* Larger font */
-  color: #2e7d32;
-  margin-bottom: 12px;
-}
-
 .sub-buttons {
   display: flex;
   flex-direction: column;
@@ -189,96 +134,6 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
   transition: background 0.2s;
 }
 .sub-btn:hover { background: #b39ddb; }
-
-/* Arrows */
-.arch-arrows-center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 140px; /* Increased gap to match left boxes */
-  align-items: center;
-  color: #555;
-  font-weight: bold;
-  font-size: 1.1rem;
-  position: relative;
-}
-
-.arrow-right {
-  width: 70px; /* Longer arrow */
-  height: 24px; /* Thicker arrow */
-  background: #ffcc80; /* Orange arrow */
-  position: relative;
-}
-.arrow-right::after {
-  content: '';
-  position: absolute;
-  right: -18px;
-  top: -12px;
-  border-left: 18px solid #ffcc80;
-  border-top: 24px solid transparent;
-  border-bottom: 24px solid transparent;
-}
-
-.arrow-label {
-  position: absolute;
-  text-align: center;
-  width: 140px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255,255,255,0.8);
-  padding: 8px;
-  border-radius: 5px;
-}
-
-/* AI SOC Box */
-.ai-soc-container {
-  background: #e8f5e9;
-  width: 100%;
-}
-
-.ai-soc-content {
-  display: flex;
-  gap: 25px;
-  margin-top: 25px;
-}
-
-.orange-box {
-  flex: 1;
-  background: #ffe0b2; /* Light orange */
-  border: 2px solid #ffb74d;
-  border-radius: 12px;
-  padding: 20px; /* Increased padding */
-  text-align: left;
-  transition: transform 0.2s;
-}
-.orange-box:hover { transform: scale(1.03); cursor: pointer; }
-.orange-box h4 { color: #e65100; font-size: 1.2rem; text-align: center; margin-bottom: 10px; }
-.orange-box ul { padding-left: 25px; color: #bf360c; font-size: 1.05rem; line-height: 1.7; }
-
-/* Vertical Arrow */
-.arrow-vertical-container {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  color: #2e7d32;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-.arrow-double-vertical {
-  width: 24px;
-  height: 50px;
-  background: #66bb6a;
-  position: relative;
-}
-.arrow-double-vertical::before {
-  content: ''; position: absolute; top: -12px; left: -12px;
-  border-bottom: 12px solid #66bb6a; border-left: 24px solid transparent; border-right: 24px solid transparent;
-}
-.arrow-double-vertical::after {
-  content: ''; position: absolute; bottom: -12px; left: -12px;
-  border-top: 12px solid #66bb6a; border-left: 24px solid transparent; border-right: 24px solid transparent;
-}
 
 /* Mobile */
 @media (max-width: 900px) {
@@ -329,9 +184,9 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
   </button>
 
   <ul class="nav-links" id="navLinks">
-    <li onclick="navigate('home')">Home</li>
-    <li onclick="navigate('about')">About</li>
-    <li onclick="navigate('services')">Services</li>
+    <li onclick="window.location='SOC_index.html'">Home</li>
+    <li onclick="navigate('overview')">Overview</li>
+    <li onclick="navigate('architecture')">Architecture</li>
   </ul>
 </nav>
 
@@ -339,10 +194,10 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 <section class="hero-section" id="home">
   <div class="content-wrapper">
     <div class="text-content">
-      <h1 class="main-title">AI Security Operation Center<br>Leading the Future</h1>
+      <h1 class="main-title">AspNetWebShield — Next-Gen Runtime Application Self-Protection for ASP.NET</h1>
       <p class="subtitle">
-        We propose an integrated Security Operations Center (SOC) architecture tailored to the cybersecurity needs of enterprises and organizations, 
-        combining threat analysis, AI-driven automated security monitoring, and incident response mechanisms to address the current challenges of fragmented systems and difficult coordination.
+        Deep dive into volatile memory. Leverage YARA rules and Control Flow Guard (CFG) anomaly detection
+        to hunt down stealthy process injections and Cobalt Strike beacons.
       </p>
       <button class="cta-button" onclick="navigate('about')">Start Exploring</button>
     </div>
@@ -353,95 +208,98 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 </section>
 
 <!-- About -->
-<section class="content-section" id="about">
-  <h2 class="section-title">About Us</h2>
+<section class="content-section" id="overview">
+  <h2 class="section-title">Overview</h2>
   <p class="section-content">
-    Our product mainly comprises the following three key features:
+    AspNetWebShield is a high-performance RASP (Runtime Application Self-Protection) solution engineered specifically for ASP.NET environments. 
+    Unlike traditional WAFs (Web Application Firewalls) that operate at the network perimeter, AspNetWebShield runs inside your application.
+    By injecting directly into the .NET runtime environment using advanced DLL hooking technology, it provides real-time monitoring and blocking 
+    of deep-level attacks including WebShell injections, Remote Code Execution (RCE), Memory Shells, and Sensitive File Tampering.
   </p>
   <div class="features-grid">
-    <div class="feature-card"><div class="feature-icon">⚙️</div><h3>Automated Workflows</h3><p class="feature-describe">Automated collection, storage, analysis, and alerting of security events through an AI-SOC security monitoring center.</p></div>
-    <div class="feature-card"><div class="feature-icon">🔍</div><h3>Advanced Tools</h3><p class="feature-describe">Some extra detection and scanning tools our team developed, and all cybersecurity tools can be integrated into our system. These can also be sold separately.</p></div>
-    <div class="feature-card"><div class="feature-icon">🧠</div><h3>LLM Integration</h3><p class="feature-describe">Integrating AI LLM models with messaging and communication apps</p></div>
-  </div>
-</section>
-
-<!-- Services -->
-<section class="content-section" id="services">
-  <h2 class="section-title">Our Architecture</h2>
-  <p class="section-content">
-    Our goal is to simplify and centralize the company’s daily security events. 
-    We match each incident against global threat-intel sharing platforms to quickly see whether the company is exposed to the latest vulnerabilities.
-    We also built extra tools to cover the gaps in existing security products, and, through AI integration with messaging apps,
-    provide an interactive channel for security alerts and threat information.
-  </p>
-  
-  <div class="architecture-diagram">
-    <!-- Left Column -->
-    <div class="arch-col-left">
-      <div class="arch-box" onclick="alert('Existing Products Clicked')">
-        <h4>Existing Security Products / EDR</h4>
-        <p>Antivirus, Firewalls, etc.</p>
-      </div>
-      
-      <div class="arch-box" style="padding-bottom: 10px;">
-        <h4>Proprietary Software</h4>
-        <div class="sub-buttons">
-          <div class="sub-btn" onclick="alert('Anti-Ransomware Clicked')">Anti-Ransomware</div>
-          <div class="sub-btn" onclick="window.location='cfgscan.html'">Cfg Scan</div>
-          <div class="sub-btn" onclick="window.location='webshell.html'">Webshell Detection</div>
-          <div class="sub-btn" onclick="alert('Fuzzing Clicked')">Fuzzing Test</div>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Middle Arrows (Desktop) -->
-    <div class="arch-arrows-center">
-      <div class="arrow-right"></div>
-      <div class="arrow-label">Data<br>Integration</div>
-      <div class="arrow-right"></div>
-    </div>
-  
-    <!-- Right Column -->
-    <div class="arch-col-right">
-      <!-- AI SOC -->
-      <div class="arch-box ai-soc-container">
-        <h3>AI-SOC Security Monitoring Center</h3>
-        <div class="ai-soc-content">
-          <div class="orange-box" onclick="alert('Database Clicked')">
-            <h4>Security Event Database</h4>
-            <ul>
-              <li>Event Classification</li>
-              <li>Statistical Charts</li>
-              <li>Structured Query</li>
+    <div class="feature-card"><div class="feature-icon">⚙️</div><h3>Zero-Day RCE Defense</h3>
+        <p class="feature-describe">Deep hooks into low-level APIs like Process.Start and ShellExecute to stop attacks before they execute.
+            <ul class="feature-describe">
+                <li><strong>Command Blocking:</strong> Automatically identifies and blocks the execution of malicious system commands such as cmd.exe, whoami, calc, and other reconnaissance tools.</li>
+                <li><strong>Context Awareness:</strong> Analyzes execution parameters and the full Stack Trace in real-time to distinguish between legitimate application behavior and RCE exploits.</li>
             </ul>
-          </div>
-          <div class="orange-box" onclick="alert('Analysis Clicked')">
-            <h4>Intelligent Auto-Analysis</h4>
+        </p>
+    </div>
+    <div class="feature-card"><div class="feature-icon">🔍</div><h3>Advanced WebShell & Memory Shell Protection</h3>
+        <p class="feature-describe">Built-in heuristics designed to counter popular WebShell management tools (e.g., AntSword, Godzilla, Behinder).
             <ul>
-              <li>Global Threat Intelligence</li>
-              <li>Custom Alert Rules</li>
+                <li><strong>Memory Assembly Scanning:</strong> Intercepts Assembly.Load(byte[]) to prevent "Fileless" Memory Shells from loading malicious payloads directly into RAM.</li>
+                <li><strong>Reflection Monitoring:</strong> Hooks MethodBase.Invoke to detect reflection-based attacks. It specifically flags known malicious class/method signatures (e.g., BASE_Info, CMD_Exec, ExploitSuggest).</li>
+                <li><strong>Instant Block:</strong> Terminates the request immediately upon detecting attack signatures and logs the attempt.</li>
             </ul>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Vertical Arrow -->
-      <div class="arrow-vertical-container">
-        <div class="arrow-double-vertical"></div>
-        <span class="arrow-text">Alerts & Query</span>
-      </div>
-  
-      <!-- Communication -->
-      <div class="arch-box" onclick="alert('Communication Clicked')" style="width: 80%;">
-        <h4>Communication Integration</h4>
-        <p>Telegram, Line, etc.<br>Real-time Notifications<br>AI Chatbot</p>
-      </div>
+        </p>
+    </div>
+    <div class="feature-card"><div class="feature-icon">🧠</div><h3>Real-Time File Integrity Monitoring (FIM)</h3>
+        <p class="feature-describe">Integrated active file surveillance for your web root and codegen directories.
+            <ul class="feature-describe">
+                <li><strong>Change Detection:</strong> Instantly triggers a file_warning alert upon the creation or modification of high-risk file types like .aspx and .dll.</li>
+                <li><strong>Tamper Proofing:</strong> Hooks File.Copy, File.Delete, and Directory.CreateDirectory to prevent attackers from modifying system files or wiping their tracks.</li>
+            </ul>
+        </p>
+    </div>
+    <div class="feature-card"><div class="feature-icon"></div><h3>Memory Integrity Verification</h3>
+        <p class="feature-describe">Equipped with self-defense mechanisms to ensure the security module itself hasn't been bypassed or tampered with by a Rootkit.
+            <ul class="feature-describe">
+                <li><strong>NTDLL Hash Check:</strong> Periodically calculates the SHA1 hash of the ntdll.dll .text section in memory and compares it against the disk image to detect unhooking attempts.</li>
+                <li><strong>Anomaly Alerting:</strong> Sends immediate alerts if core system libraries are modified in memory.</li>
+            </ul>
+        </p>
+    </div>
+    <div class="feature-card"><div class="feature-icon"></div><h3>Sensitive Operation & Anti-Spyware</h3>
+        <ul class="feature-describe">
+            <li><strong>Anti-Screenshot:</strong> Intercepts Graphics.CopyFromScreen to prevent malware from capturing server screen contents.</li>
+            <li><strong>Script Blocking:</strong> Monitors Microsoft.JScript.Eval to prevent unauthorized server-side script execution.</li>
+        </ul>
     </div>
   </div>
 </section>
 
+<!-- Usage Guide -->
+<section class="content-section" id="architecture">
+  <h2 class="section-title">Technical Specifications & Architecture</h2>
+  <ul class="section-content-ul">
+    <li>Core Engine: Built upon the robust HarmonyLib and MonoMod frameworks for stable, high-performance .NET method hooking.</li>
+    <li>Auditing & Logging:
+      <ul>
+        <li>Local Logs: Categorized logging into log.txt (General), warning.txt (Threats), ex.txt (Exceptions), and file_warning.txt (FIM).</li>
+        <li>Remote Syslog: Supports UDP forwarding (Port 514) to integrate with SIEM/SOC solutions (Default IP: 192.168.0.101).</li>
+      </ul>
+    </li>
+    <li>Licensing System:
+        <ul>
+          <li>RSA Encryption: Uses asymmetric encryption for secure license validation.</li>
+          <li>Hardware Binding: Binds the license to the server's CPU ProcessorId to prevent unauthorized copying.</li>
+          <li>Expiration Control: Built-in validity period checks to manage subscription lifecycles.</li>
+        </ul>
+    </li>
+  </ul>
+</section>
 
+<!-- Usage Guide -->
+<section class="content-section" id="architecture">
+  <h2 class="section-title">Deployment & Operations</h2>
+  <ul class="section-content-ul">
+    <li>Drop-in Installation: Simply deploy the DLLs to your application's bin directory.</li>
+    <li>Configuration: Manage settings via config.json to define license paths and log output directories.</li>
+    <li>Auto-Protection: The system automatically validates the license, initializes the Hook Engine, and starts File Watcher threads upon application startup.</li>
+    <li>Active Blocking: When an attack is intercepted, the attacker receives a "Blocked" response page displaying the specific attack type and stack trace, serving as a powerful deterrent.</li>
+  </ul>
+</section>
 
+<section class="content-section" id="Why Choose AspNetWebShield?">
+  <h2 class="section-title">Why Choose AspNetWebShield?</h2>
+  <p class="section-content">"WAFs can be bypassed. RASP is always there."</p>
+  <ul class="section-content-ul">
+    <li>Visibility: Provides detailed Stack Traces for every blocked attack, allowing developers to pinpoint the exact vulnerability location in the code.</li>
+    <li>Precision: Uses behavioral analysis and API-level hooking rather than just regex signature matching, significantly reducing false positives.</li>
+    <li>Resilience: Features memory integrity checks to protect the protector.</li>
+  </ul>
+</section>
 
 
 <script>
@@ -504,5 +362,3 @@ document.head.appendChild(style);
 </script>
 </body>
 </html>
-
-
