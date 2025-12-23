@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI-SOC</title>
+<title>AI-SOC Security Monitoring Center</title>
 <style>
 /* === Base styles (kept) === */
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -116,25 +116,6 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 @keyframes slideInLeft{from{opacity:0;transform:translateX(-50px);}to{opacity:1;transform:translateX(0);}}
 @keyframes float{0%,100%{transform:translateY(0);opacity:.4;}50%{transform:translateY(-20px);opacity:1;}}
 
-.sub-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.sub-btn {
-  background: #d1c4e9; /* Light purple */
-  border: 1px solid #9575cd;
-  padding: 12px; /* Larger padding */
-  border-radius: 8px;
-  color: #4527a0;
-  font-weight: bold;
-  font-size: 1.1rem; /* Larger font */
-  transition: background 0.2s;
-}
-.sub-btn:hover { background: #b39ddb; }
-
 /* Mobile */
 @media (max-width: 900px) {
   .architecture-diagram { flex-direction: column; }
@@ -195,12 +176,11 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 <section class="hero-section" id="home">
   <div class="content-wrapper">
     <div class="text-content">
-      <h1 class="main-title">AspNetWebShield — Next-Gen Runtime Application Self-Protection for ASP.NET</h1>
+      <h1 class="main-title">AI-SOC Security Monitoring Center</h1>
       <p class="subtitle">
-        Deep dive into volatile memory. Leverage YARA rules and Control Flow Guard (CFG) anomaly detection
-        to hunt down stealthy process injections and Cobalt Strike beacons.
+        AI-SOC is an intuitive and powerful web-based security management platform. Beyond simply aggregating raw logs from various security products, its core value lies in real-time correlation with world-class Cyber Threat Intelligence (CTI).
       </p>
-      <button class="cta-button" onclick="navigate('about')">Start Exploring</button>
+      <button class="cta-button" onclick="navigate('features')">Start Exploring</button>
     </div>
   </div>
   <div class="background-visual"></div>
@@ -208,100 +188,29 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
   <div class="particle"></div><div class="particle"></div><div class="particle"></div>
 </section>
 
-<!-- About -->
+<!-- Overview -->
 <section class="content-section" id="overview">
   <h2 class="section-title">Overview</h2>
   <p class="section-content">
-    AspNetWebShield is a high-performance RASP (Runtime Application Self-Protection) solution engineered specifically for ASP.NET environments. 
-    Unlike traditional WAFs (Web Application Firewalls) that operate at the network perimeter, AspNetWebShield runs inside your application.
-    By injecting directly into the .NET runtime environment using advanced DLL hooking technology, it provides real-time monitoring and blocking 
-    of deep-level attacks including WebShell injections, Remote Code Execution (RCE), Memory Shells, and Sensitive File Tampering.
+    By automatically cross-referencing malware samples and suspicious IPs, AI-SOC empowers security teams to determine threat levels, eliminating security information silos.
   </p>
+</section>
+
+<!-- Features -->
+<section class="content-section" id="features">
+  <h2 class="section-title">Key Features</h2>
   <div class="features-grid">
-    <div class="feature-card"><div class="feature-icon">⚙️</div><h3>Zero-Day RCE Defense</h3>
-        <p class="feature-describe">Deep hooks into low-level APIs like Process.Start and ShellExecute to stop attacks before they execute.
-            <ul class="feature-describe">
-                <li><strong>Command Blocking:</strong> Automatically identifies and blocks the execution of malicious system commands such as cmd.exe, whoami, calc, and other reconnaissance tools.</li>
-                <li><strong>Context Awareness:</strong> Analyzes execution parameters and the full Stack Trace in real-time to distinguish between legitimate application behavior and RCE exploits.</li>
-            </ul>
-        </p>
+    <div class="feature-card"><div class="feature-icon">📊</div><h3>Unified Log Visualization</h3>
+        <p class="feature-describe">Consolidate security logs from diverse vendors and devices into a single web interface, transforming chaotic data into clear, organized charts and lists.</p>
     </div>
-    <div class="feature-card"><div class="feature-icon">🔍</div><h3>Advanced WebShell & Memory Shell Protection</h3>
-        <p class="feature-describe">Built-in heuristics designed to counter popular WebShell management tools (e.g., AntSword, Godzilla, Behinder).
-            <ul>
-                <li><strong>Memory Assembly Scanning:</strong> Intercepts Assembly.Load(byte[]) to prevent "Fileless" Memory Shells from loading malicious payloads directly into RAM.</li>
-                <li><strong>Reflection Monitoring:</strong> Hooks MethodBase.Invoke to detect reflection-based attacks. It specifically flags known malicious class/method signatures (e.g., BASE_Info, CMD_Exec, ExploitSuggest).</li>
-                <li><strong>Instant Block:</strong> Terminates the request immediately upon detecting attack signatures and logs the attempt.</li>
-            </ul>
-        </p>
+    <div class="feature-card"><div class="feature-icon">🌐</div><h3>Real-time CTI Correlation</h3>
+        <p class="feature-describe">Automatically integrate with global CTI platforms such as Malware Bazaar, AbuseIPDB, and MISP. When a matching Indicator of Compromise (IOC) appears in the logs, the system instantly contextualizes the threat.</p>
     </div>
-    <div class="feature-card"><div class="feature-icon">🧠</div><h3>Real-Time File Integrity Monitoring (FIM)</h3>
-        <p class="feature-describe">Integrated active file surveillance for your web root and codegen directories.
-            <ul class="feature-describe">
-                <li><strong>Change Detection:</strong> Instantly triggers a file_warning alert upon the creation or modification of high-risk file types like .aspx and .dll.</li>
-                <li><strong>Tamper Proofing:</strong> Hooks File.Copy, File.Delete, and Directory.CreateDirectory to prevent attackers from modifying system files or wiping their tracks.</li>
-            </ul>
-        </p>
-    </div>
-    <div class="feature-card"><div class="feature-icon"></div><h3>Memory Integrity Verification</h3>
-        <p class="feature-describe">Equipped with self-defense mechanisms to ensure the security module itself hasn't been bypassed or tampered with by a Rootkit.
-            <ul class="feature-describe">
-                <li><strong>NTDLL Hash Check:</strong> Periodically calculates the SHA1 hash of the ntdll.dll .text section in memory and compares it against the disk image to detect unhooking attempts.</li>
-                <li><strong>Anomaly Alerting:</strong> Sends immediate alerts if core system libraries are modified in memory.</li>
-            </ul>
-        </p>
-    </div>
-    <div class="feature-card"><div class="feature-icon"></div><h3>Sensitive Operation & Anti-Spyware</h3>
-        <ul class="feature-describe">
-            <li><strong>Anti-Screenshot:</strong> Intercepts Graphics.CopyFromScreen to prevent malware from capturing server screen contents.</li>
-            <li><strong>Script Blocking:</strong> Monitors Microsoft.JScript.Eval to prevent unauthorized server-side script execution.</li>
-        </ul>
+    <div class="feature-card"><div class="feature-icon">🔍</div><h3>Intelligent Hunting & Investigation</h3>
+        <p class="feature-describe">Designed for SOC analysts, our search functionality allows for rapid drill-down into specific incidents, significantly reducing investigation time.</p>
     </div>
   </div>
 </section>
-
-<!-- Usage Guide -->
-<section class="content-section" id="architecture">
-  <h2 class="section-title">Technical Specifications & Architecture</h2>
-  <ul class="section-content-ul">
-    <li>Core Engine: Built upon the robust HarmonyLib and MonoMod frameworks for stable, high-performance .NET method hooking.</li>
-    <li>Auditing & Logging:
-      <ul>
-        <li>Local Logs: Categorized logging into log.txt (General), warning.txt (Threats), ex.txt (Exceptions), and file_warning.txt (FIM).</li>
-        <li>Remote Syslog: Supports UDP forwarding (Port 514) to integrate with SIEM/SOC solutions (Default IP: 192.168.0.101).</li>
-      </ul>
-    </li>
-    <li>Licensing System:
-        <ul>
-          <li>RSA Encryption: Uses asymmetric encryption for secure license validation.</li>
-          <li>Hardware Binding: Binds the license to the server's CPU ProcessorId to prevent unauthorized copying.</li>
-          <li>Expiration Control: Built-in validity period checks to manage subscription lifecycles.</li>
-        </ul>
-    </li>
-  </ul>
-</section>
-
-<!-- Usage Guide -->
-<section class="content-section" id="architecture">
-  <h2 class="section-title">Deployment & Operations</h2>
-  <ul class="section-content-ul">
-    <li>Drop-in Installation: Simply deploy the DLLs to your application's bin directory.</li>
-    <li>Configuration: Manage settings via config.json to define license paths and log output directories.</li>
-    <li>Auto-Protection: The system automatically validates the license, initializes the Hook Engine, and starts File Watcher threads upon application startup.</li>
-    <li>Active Blocking: When an attack is intercepted, the attacker receives a "Blocked" response page displaying the specific attack type and stack trace, serving as a powerful deterrent.</li>
-  </ul>
-</section>
-
-<section class="content-section" id="Why Choose AspNetWebShield?">
-  <h2 class="section-title">Why Choose AspNetWebShield?</h2>
-  <p class="section-content">"WAFs can be bypassed. RASP is always there."</p>
-  <ul class="section-content-ul">
-    <li>Visibility: Provides detailed Stack Traces for every blocked attack, allowing developers to pinpoint the exact vulnerability location in the code.</li>
-    <li>Precision: Uses behavioral analysis and API-level hooking rather than just regex signature matching, significantly reducing false positives.</li>
-    <li>Resilience: Features memory integrity checks to protect the protector.</li>
-  </ul>
-</section>
-
 
 <script>
 // Navbar shadow on scroll
