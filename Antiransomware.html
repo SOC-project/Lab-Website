@@ -116,6 +116,101 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 @keyframes slideInLeft{from{opacity:0;transform:translateX(-50px);}to{opacity:1;transform:translateX(0);}}
 @keyframes float{0%,100%{transform:translateY(0);opacity:.4;}50%{transform:translateY(-20px);opacity:1;}}
 
+/* Interface Preview (Same as Fuzzing) */
+.interface-container {
+    perspective: 1500px;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    padding: 20px;
+}
+.interface-wrapper {
+    position: relative;
+    width: 50vw;
+    min-width: 320px;
+    transform-style: preserve-3d;
+    animation: float-interface 8s ease-in-out infinite;
+}
+.interface-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+    transform: translateZ(-50px);
+    border-radius: 50%;
+    filter: blur(40px);
+}
+.interface-img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 
+        0 20px 50px -12px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    backdrop-filter: blur(10px);
+    transform: rotateX(10deg) rotateY(0deg);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.interface-wrapper:hover .interface-img {
+    transform: rotateX(0deg) rotateY(0deg) scale(1.02);
+    box-shadow: 
+        0 30px 60px -12px rgba(59, 130, 246, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+}
+@keyframes float-interface {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Feature Spotlight */
+.spotlight-section {
+    padding: 50px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.spotlight-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 100px;
+}
+.spotlight-row.reverse {
+    flex-direction: row-reverse;
+}
+.spotlight-text {
+    flex: 1;
+}
+.spotlight-text h3 {
+    font-size: 2rem;
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+.spotlight-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #64748b;
+}
+.spotlight-image {
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.spotlight-image:hover {
+    transform: translateY(-10px);
+}
+.spotlight-image img {
+    width: 100%;
+    display: block;
+}
+@media (max-width: 900px) {
+    .spotlight-row, .spotlight-row.reverse {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
 /* Mobile */
 @media (max-width: 900px) {
   .architecture-diagram { flex-direction: column; }
@@ -194,6 +289,11 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
   <p class="section-content">
     Whether facing new variants or Zero-day exploits, our system triggers an immediate defense response upon detecting suspicious encryption or renaming activities, keeping your digital assets invincible.
   </p>
+  <div class="interface-container">
+      <div class="interface-wrapper">
+          <img src="assets/img/Ransomware_image03.png" alt="Ransomware Protection Dashboard" class="interface-img">
+      </div>
+  </div>
 </section>
 
 <!-- Features -->
@@ -212,10 +312,39 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
     <div class="feature-card"><div class="feature-icon">📊</div><h3>Behavior-Based Detection</h3>
         <p class="feature-describe">By monitoring the frequency of file opening, writing, and modification, we identify lurking ransomware behaviors earlier than traditional scanners, striking before your files are compromised.</p>
     </div>
-    <div class="feature-card"><div class="feature-icon">⚡</div><h3>Instant Recovery</h3>
+    <div class="feature-card" style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto; width: 100%;"><div class="feature-icon">⚡</div><h3>Instant Recovery</h3>
         <p class="feature-describe">The moment high-risk behavior is detected, the system triggers an "Instant Snapshot Backup" of affected files. Even if a threat bypasses initial blocking, you can perform a one-click restoration using protected backups, ensuring zero data loss.</p>
     </div>
   </div>
+</section>
+
+<!-- Feature Spotlight -->
+<section class="spotlight-section">
+    <!-- Alert Feature -->
+    <div class="spotlight-row">
+        <div class="spotlight-text">
+            <h3>Intelligent Threat Detection</h3>
+            <p>
+                Upon detecting suspicious behavior, the system instantly identifies the threat source, including Hash, IP, and file path. Administrators are presented with clear, actionable options to Ignore, Delete, or Whitelist/Blacklist the process immediately.
+            </p>
+        </div>
+        <div class="spotlight-image">
+            <img src="assets/img/Ransomware_image02.png" alt="Threat Alert Dialog">
+        </div>
+    </div>
+
+    <!-- Blacklist Feature -->
+    <div class="spotlight-row reverse">
+        <div class="spotlight-text">
+            <h3>Granular Access Control</h3>
+            <p>
+                Maintain complete control over your system's security with our comprehensive Black/White list management. Easily view, track, and manage allowed and blocked processes with detailed logs including file hashes and creation timestamps.
+            </p>
+        </div>
+        <div class="spotlight-image">
+            <img src="assets/img/Ransomware_image01.png" alt="Blacklist Management">
+        </div>
+    </div>
 </section>
 
 <script>

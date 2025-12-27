@@ -114,7 +114,61 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 
 /* Animations */
 @keyframes slideInLeft{from{opacity:0;transform:translateX(-50px);}to{opacity:1;transform:translateX(0);}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(50px);}to{opacity:1;transform:translateX(0);}}
 @keyframes float{0%,100%{transform:translateY(0);opacity:.4;}50%{transform:translateY(-20px);opacity:1;}}
+
+/* Hero Image (Removed) */
+
+/* Interface Preview */
+.interface-container {
+    perspective: 1500px;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    padding: 20px;
+}
+
+.interface-wrapper {
+    position: relative;
+    width: 50vw;
+    min-width: 320px;
+    transform-style: preserve-3d;
+    animation: float-interface 8s ease-in-out infinite;
+}
+
+.interface-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+    transform: translateZ(-50px);
+    border-radius: 50%;
+    filter: blur(40px);
+}
+
+.interface-img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 
+        0 20px 50px -12px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.5) inset; /* Inner border light */
+    backdrop-filter: blur(10px);
+    transform: rotateX(10deg) rotateY(0deg);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.interface-wrapper:hover .interface-img {
+    transform: rotateX(0deg) rotateY(0deg) scale(1.02);
+    box-shadow: 
+        0 30px 60px -12px rgba(59, 130, 246, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+}
+
+@keyframes float-interface {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
 
 /* Mobile */
 @media (max-width: 900px) {
@@ -210,7 +264,7 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
             </ul>
         </p>
     </div>
-    <div class="feature-card"><div class="feature-icon">📝</div><h3>Uniqueness Evidence</h3>
+    <div class="feature-card" style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto; width: 100%;"><div class="feature-icon">📝</div><h3>Uniqueness Evidence</h3>
         <p class="feature-describe">One full run executed.
             <ul class="feature-describe">
                 <li>See <code>log.txt</code> for unique entries (per protocol notes).</li>
@@ -265,6 +319,19 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
         </p>
     </div>
   </div>
+</section>
+
+<!-- Interface Preview -->
+<section class="content-section" id="interface">
+    <h2 class="section-title">Intuitive Control Panel</h2>
+    <p class="section-content">
+        Monitor fuzzing progress in real-time with our streamlined dashboard. Configure targets, set delays, and visualize test case execution instantly.
+    </p>
+    <div class="interface-container">
+        <div class="interface-wrapper">
+            <img src="assets/img/Fuzzing01.png" alt="Fuzzing Interface Dashboard" class="interface-img">
+        </div>
+    </div>
 </section>
 
 <script>
