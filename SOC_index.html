@@ -250,9 +250,8 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
   border-radius: 12px;
   padding: 20px; /* Increased padding */
   text-align: left;
-  transition: transform 0.2s;
 }
-.orange-box:hover { transform: scale(1.03); cursor: pointer; }
+.orange-box:hover { cursor: default; }
 .orange-box h4 { color: #e65100; font-size: 1.2rem; text-align: center; margin-bottom: 10px; }
 .orange-box ul { padding-left: 25px; color: #bf360c; font-size: 1.05rem; line-height: 1.7; }
 
@@ -329,7 +328,8 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
   </button>
 
   <ul class="nav-links" id="navLinks">
-    <li onclick="navigate('home')">Home</li>
+    <li onclick="window.location.href='home_page.html'">Home</li>
+    <li onclick="navigate('home')">AI-SOC</li>
     <li onclick="navigate('about')">About</li>
     <li onclick="navigate('services')">Services</li>
   </ul>
@@ -339,7 +339,7 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 <section class="hero-section" id="home">
   <div class="content-wrapper">
     <div class="text-content">
-      <h1 class="main-title">AI Security Operation Center<br>Leading the Future</h1>
+      <h1 class="main-title">AI Security Operation Center</h1>
       <p class="subtitle">
         We propose an integrated Security Operations Center (SOC) architecture tailored to the cybersecurity needs of enterprises and organizations, 
         combining threat analysis, AI-driven automated security monitoring, and incident response mechanisms to address the current challenges of fragmented systems and difficult coordination.
@@ -386,10 +386,10 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
       <div class="arch-box" style="padding-bottom: 10px;">
         <h4>Proprietary Software</h4>
         <div class="sub-buttons">
-          <div class="sub-btn" onclick="alert('Anti-Ransomware Clicked')">Anti-Ransomware</div>
+          <div class="sub-btn" onclick="window.location='Antiransomware.html'">Anti-Ransomware</div>
           <div class="sub-btn" onclick="window.location='cfgscan.html'">Cfg Scan</div>
           <div class="sub-btn" onclick="window.location='webshell.html'">Webshell Detection</div>
-          <div class="sub-btn" onclick="alert('Fuzzing Clicked')">Fuzzing Test</div>
+          <div class="sub-btn" onclick="window.location='fuzzing.html'">Fuzzing Test</div>
         </div>
       </div>
     </div>
@@ -404,10 +404,10 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
     <!-- Right Column -->
     <div class="arch-col-right">
       <!-- AI SOC -->
-      <div class="arch-box ai-soc-container">
+      <div class="arch-box ai-soc-container" onclick="window.location='Monitoring_Center.html'">
         <h3>AI-SOC Security Monitoring Center</h3>
         <div class="ai-soc-content">
-          <div class="orange-box" onclick="alert('Database Clicked')">
+          <div class="orange-box">
             <h4>Security Event Database</h4>
             <ul>
               <li>Event Classification</li>
@@ -415,7 +415,7 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
               <li>Structured Query</li>
             </ul>
           </div>
-          <div class="orange-box" onclick="alert('Analysis Clicked')">
+          <div class="orange-box">
             <h4>Intelligent Auto-Analysis</h4>
             <ul>
               <li>Global Threat Intelligence</li>
@@ -432,7 +432,7 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
       </div>
   
       <!-- Communication -->
-      <div class="arch-box" onclick="alert('Communication Clicked')" style="width: 80%;">
+      <div class="arch-box" onclick="window.location='AI_Chatbot.html'" style="width: 80%;">
         <h4>Communication Integration</h4>
         <p>Telegram, Line, etc.<br>Real-time Notifications<br>AI Chatbot</p>
       </div>

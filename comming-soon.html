@@ -28,7 +28,7 @@
                         <div class="header-inn d-flex align-items-center justify-content-between">
                             <div class="site-logo">
                                 <a href="home_page.html" style="font-size: 30px; font-weight: 800; color: #205B56; text-decoration: none;">
-                                    ISLab
+                                    Suprema Technologies
                                 </a>
                             </div>
                             <div class="header-navigation d-flex align-items-center ">
@@ -45,10 +45,13 @@
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a href="javascript:;">Products</a>
+                                                <a href="javascript:;">Sub-Product</a>
                                                 <ul>
-                                                    <li><a href="project.html">All Project</a></li>
-                                                    <li><a href="project-details.html">Project Details</a></li>
+                                                    <li><a href="product.html">All Products</a></li>
+                                                    <li><a href="Antiransomware.html">Anti-Ransomware</a></li>
+                                                    <li><a href="cfgscan.html">Cfg Scan</a></li>
+                                                    <li><a href="webshell.html">Webshell Detection</a></li>
+                                                    <li><a href="fuzzing.html">Fuzzing Test</a></li>
                                                 </ul>
                                             </li>
                                             <li>
@@ -112,8 +115,11 @@
             </section>
             <!-- Comming Soon End -->
             <!-- Footer Start -->
-            <footer class="footer-area">
-                <div class="footer-top">
+            <footer class="footer-area" style="position: relative; overflow: hidden;">
+                <!-- Dynamic Cyber Reactor Container (Background) -->
+                <div id="dynamic-footer-visuals" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;"></div>
+
+                <div class="footer-top" style="position: relative; z-index: 2;">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-4 col-sm-6">
@@ -121,18 +127,15 @@
                                     <div class="footer-contact">
                                         <div class="footer-logo">
                                             <a href="home_page.html" style="font-size: 30px; font-weight: 800; color: #205B56; text-decoration: none;">
-                                                ISLab
+                                                Suprema Technologies
                                             </a>
                                         </div>
                                         <ul>
                                             <li>
-                                                <p>No. 101, Section 2, Kuang-Fu Road, Hsinchu,<br>Taiwan 300044, R.O.C.</p>
+                                                <p><a href="tel:+886 929 517 001">+886 929 517 001</a></p>
                                             </li>
                                             <li>
-                                                <p>+886 03-5742968</p>
-                                            </li>
-                                            <li>
-                                                <p>hmsun@cs.nthu.edu.tw</p>
+                                                <p><a href="mailto:suprematechnologiesltd@gmail.com">suprematechnologiesltd@gmail.com</a></p>
                                             </li>
                                         </ul>
                                     </div>
@@ -152,33 +155,13 @@
                             </div>
                             <div class="col-lg-4 col-sm-6">
                                 <div class="footer-widget">
-                                    <div class="footer-newslatter">
-                                        <h3>Subscribe to Newsletter</h3>
-                                        <div class="footer-newsletter-form">
-                                            <form onsubmit="return false;">
-                                                <input type="email" placeholder="Email Address" />
-                                                <button type="button">
-                                                    <svg width="46" height="14" viewBox="0 0 46 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M44 7L44.5303 7.53033L45.0607 7L44.5303 6.46967L44 7ZM37.4697 1.53033L43.4697 7.53033L44.5303 6.46967L38.5303 0.469669L37.4697 1.53033ZM43.4697 6.46967L37.4697 12.4697L38.5303 13.5303L44.5303 7.53033L43.4697 6.46967Z" fill="#fff" />
-                                                        <path d="M2.38399e-08 7.75L44 7.75L44 6.25L-2.38399e-08 6.25L2.38399e-08 7.75Z" fill="#fff" />
-                                                    </svg>
-                                                </button>
-                                            </form>
-                                        </div>
-                                        <div class="footer-social">
-                                            <ul>
-                                                <li><a href="javascript:;"><i class="fab fa-facebook-square"></i></a></li>
-                                                <li><a href="javascript:;"><i class="fab fa-whatsapp"></i></a></li>
-                                                <li><a href="javascript:;"><i class="fab fa-dribbble"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    <!-- Empty widget for spacing if needed, or remove -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="footer-bottom">
+                <div class="footer-bottom" style="position: relative; z-index: 2;">
                     <ul class="footer-copyright text-center">
                         <li>
                             <p>2025 &copy; All Rights Reserved.</p>
@@ -200,6 +183,59 @@
     <script src="assets/js/jquery.waypoints.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        (function(){
+            const container = document.getElementById('dynamic-footer-visuals');
+            if(!container) return;
+
+            function createReactor() {
+                const reactor = document.createElement('div');
+                reactor.className = 'dynamic-reactor';
+                
+                // Random position (Full footer range)
+                const left = Math.random() * 100; 
+                const top = Math.random() * 100;
+                reactor.style.left = left + '%';
+                reactor.style.top = top + '%';
+                
+                // Random scale
+                const scale = Math.random() * 0.6 + 0.2; // 0.2 to 0.8
+                reactor.style.transform = `translate(-50%, -50%) scale(${scale})`;
+                
+                // Random opacity
+                reactor.style.opacity = '0'; // Start invisible
+                
+                // Inner HTML (Reusing the reactor styles)
+                reactor.innerHTML = `
+                    <div class="reactor-ring outer"></div>
+                    <div class="reactor-ring middle"></div>
+                    <div class="reactor-ring inner"></div>
+                    <div class="reactor-core"></div>
+                `;
+
+                container.appendChild(reactor);
+
+                // Fade in
+                requestAnimationFrame(() => {
+                    reactor.style.opacity = Math.random() * 0.6 + 0.2;
+                });
+
+                // Remove after animation
+                setTimeout(() => {
+                    reactor.style.opacity = '0';
+                    setTimeout(() => {
+                        if(reactor.parentNode) reactor.remove();
+                    }, 1000); // Wait for fade out
+                }, 4000); // Run for 4 seconds
+            }
+
+            // Initial spawn
+            createReactor();
+            
+            // Continuous spawn
+            setInterval(createReactor, 1200); // Create new one every 1.2s
+        })();
+    </script>
 </body>
 
 </html>

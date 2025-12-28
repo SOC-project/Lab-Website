@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI-SOC</title>
+<title>Ransomware Defender</title>
 <style>
 /* === Base styles (kept) === */
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -116,24 +116,100 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 @keyframes slideInLeft{from{opacity:0;transform:translateX(-50px);}to{opacity:1;transform:translateX(0);}}
 @keyframes float{0%,100%{transform:translateY(0);opacity:.4;}50%{transform:translateY(-20px);opacity:1;}}
 
-.sub-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 20px;
+/* Interface Preview (Same as Fuzzing) */
+.interface-container {
+    perspective: 1500px;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    padding: 20px;
+}
+.interface-wrapper {
+    position: relative;
+    width: 50vw;
+    min-width: 320px;
+    transform-style: preserve-3d;
+    animation: float-interface 8s ease-in-out infinite;
+}
+.interface-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+    transform: translateZ(-50px);
+    border-radius: 50%;
+    filter: blur(40px);
+}
+.interface-img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 
+        0 20px 50px -12px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    backdrop-filter: blur(10px);
+    transform: rotateX(10deg) rotateY(0deg);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.interface-wrapper:hover .interface-img {
+    transform: rotateX(0deg) rotateY(0deg) scale(1.02);
+    box-shadow: 
+        0 30px 60px -12px rgba(59, 130, 246, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+}
+@keyframes float-interface {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
-.sub-btn {
-  background: #d1c4e9; /* Light purple */
-  border: 1px solid #9575cd;
-  padding: 12px; /* Larger padding */
-  border-radius: 8px;
-  color: #4527a0;
-  font-weight: bold;
-  font-size: 1.1rem; /* Larger font */
-  transition: background 0.2s;
+/* Feature Spotlight */
+.spotlight-section {
+    padding: 50px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-.sub-btn:hover { background: #b39ddb; }
+.spotlight-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 100px;
+}
+.spotlight-row.reverse {
+    flex-direction: row-reverse;
+}
+.spotlight-text {
+    flex: 1;
+}
+.spotlight-text h3 {
+    font-size: 2rem;
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+.spotlight-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #64748b;
+}
+.spotlight-image {
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.spotlight-image:hover {
+    transform: translateY(-10px);
+}
+.spotlight-image img {
+    width: 100%;
+    display: block;
+}
+@media (max-width: 900px) {
+    .spotlight-row, .spotlight-row.reverse {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
 
 /* Mobile */
 @media (max-width: 900px) {
@@ -195,12 +271,11 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
 <section class="hero-section" id="home">
   <div class="content-wrapper">
     <div class="text-content">
-      <h1 class="main-title">AspNetWebShield — Next-Gen Runtime Application Self-Protection for ASP.NET</h1>
+      <h1 class="main-title">Ransomware Defender</h1>
       <p class="subtitle">
-        Deep dive into volatile memory. Leverage YARA rules and Control Flow Guard (CFG) anomaly detection
-        to hunt down stealthy process injections and Cobalt Strike beacons.
+        Advanced security solution engineered to counter modern encryption threats. Moving beyond outdated signature-based detection, we utilize low-level file system monitoring and API hooking to pinpoint abnormal file behaviors.
       </p>
-      <button class="cta-button" onclick="navigate('about')">Start Exploring</button>
+      <button class="cta-button" onclick="navigate('features')">Start Exploring</button>
     </div>
   </div>
   <div class="background-visual"></div>
@@ -208,100 +283,69 @@ body{font-family:'Arial',sans-serif;overflow-x:hidden;background:linear-gradient
   <div class="particle"></div><div class="particle"></div><div class="particle"></div>
 </section>
 
-<!-- About -->
+<!-- Overview -->
 <section class="content-section" id="overview">
   <h2 class="section-title">Overview</h2>
   <p class="section-content">
-    AspNetWebShield is a high-performance RASP (Runtime Application Self-Protection) solution engineered specifically for ASP.NET environments. 
-    Unlike traditional WAFs (Web Application Firewalls) that operate at the network perimeter, AspNetWebShield runs inside your application.
-    By injecting directly into the .NET runtime environment using advanced DLL hooking technology, it provides real-time monitoring and blocking 
-    of deep-level attacks including WebShell injections, Remote Code Execution (RCE), Memory Shells, and Sensitive File Tampering.
+    Whether facing new variants or Zero-day exploits, our system triggers an immediate defense response upon detecting suspicious encryption or renaming activities, keeping your digital assets invincible.
   </p>
+  <div class="interface-container">
+      <div class="interface-wrapper">
+          <img src="assets/img/Ransomware_image03.png" alt="Ransomware Protection Dashboard" class="interface-img">
+      </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="content-section" id="features">
+  <h2 class="section-title">Key Features</h2>
   <div class="features-grid">
-    <div class="feature-card"><div class="feature-icon">⚙️</div><h3>Zero-Day RCE Defense</h3>
-        <p class="feature-describe">Deep hooks into low-level APIs like Process.Start and ShellExecute to stop attacks before they execute.
-            <ul class="feature-describe">
-                <li><strong>Command Blocking:</strong> Automatically identifies and blocks the execution of malicious system commands such as cmd.exe, whoami, calc, and other reconnaissance tools.</li>
-                <li><strong>Context Awareness:</strong> Analyzes execution parameters and the full Stack Trace in real-time to distinguish between legitimate application behavior and RCE exploits.</li>
-            </ul>
-        </p>
+    <div class="feature-card"><div class="feature-icon">🚨</div><h3>Multi-Channel Real-time Alerts</h3>
+        <p class="feature-describe">Upon detecting a suspicious process, the system provides intuitive GUI pop-ups and integrates seamlessly with LINE and Telegram. Stay informed about potential threats in real-time, no matter where you are.</p>
     </div>
-    <div class="feature-card"><div class="feature-icon">🔍</div><h3>Advanced WebShell & Memory Shell Protection</h3>
-        <p class="feature-describe">Built-in heuristics designed to counter popular WebShell management tools (e.g., AntSword, Godzilla, Behinder).
-            <ul>
-                <li><strong>Memory Assembly Scanning:</strong> Intercepts Assembly.Load(byte[]) to prevent "Fileless" Memory Shells from loading malicious payloads directly into RAM.</li>
-                <li><strong>Reflection Monitoring:</strong> Hooks MethodBase.Invoke to detect reflection-based attacks. It specifically flags known malicious class/method signatures (e.g., BASE_Info, CMD_Exec, ExploitSuggest).</li>
-                <li><strong>Instant Block:</strong> Terminates the request immediately upon detecting attack signatures and logs the attempt.</li>
-            </ul>
-        </p>
+    <div class="feature-card"><div class="feature-icon">🛡️</div><h3>Decisive Control & Whitelisting</h3>
+        <p class="feature-describe">Empowers administrators with ultimate control. Once an alert is received, you can terminate the suspicious process and blacklist it with a single click. Our built-in Whitelist/Blacklist system allows flexible management of authorized software, minimizing false positives.</p>
     </div>
-    <div class="feature-card"><div class="feature-icon">🧠</div><h3>Real-Time File Integrity Monitoring (FIM)</h3>
-        <p class="feature-describe">Integrated active file surveillance for your web root and codegen directories.
-            <ul class="feature-describe">
-                <li><strong>Change Detection:</strong> Instantly triggers a file_warning alert upon the creation or modification of high-risk file types like .aspx and .dll.</li>
-                <li><strong>Tamper Proofing:</strong> Hooks File.Copy, File.Delete, and Directory.CreateDirectory to prevent attackers from modifying system files or wiping their tracks.</li>
-            </ul>
-        </p>
+    <div class="feature-card"><div class="feature-icon">🌐</div><h3>Collaborative Defense Network</h3>
+        <p class="feature-describe">Our Collaborative Defense system automatically synchronizes Blacklist/Whitelist data across all devices. When a threat is detected at one endpoint, the entire network is immunized instantly, building an unbreakable collective defense ecosystem.</p>
     </div>
-    <div class="feature-card"><div class="feature-icon"></div><h3>Memory Integrity Verification</h3>
-        <p class="feature-describe">Equipped with self-defense mechanisms to ensure the security module itself hasn't been bypassed or tampered with by a Rootkit.
-            <ul class="feature-describe">
-                <li><strong>NTDLL Hash Check:</strong> Periodically calculates the SHA1 hash of the ntdll.dll .text section in memory and compares it against the disk image to detect unhooking attempts.</li>
-                <li><strong>Anomaly Alerting:</strong> Sends immediate alerts if core system libraries are modified in memory.</li>
-            </ul>
-        </p>
+    <div class="feature-card"><div class="feature-icon">📊</div><h3>Behavior-Based Detection</h3>
+        <p class="feature-describe">By monitoring the frequency of file opening, writing, and modification, we identify lurking ransomware behaviors earlier than traditional scanners, striking before your files are compromised.</p>
     </div>
-    <div class="feature-card"><div class="feature-icon"></div><h3>Sensitive Operation & Anti-Spyware</h3>
-        <ul class="feature-describe">
-            <li><strong>Anti-Screenshot:</strong> Intercepts Graphics.CopyFromScreen to prevent malware from capturing server screen contents.</li>
-            <li><strong>Script Blocking:</strong> Monitors Microsoft.JScript.Eval to prevent unauthorized server-side script execution.</li>
-        </ul>
+    <div class="feature-card" style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto; width: 100%;"><div class="feature-icon">⚡</div><h3>Instant Recovery</h3>
+        <p class="feature-describe">The moment high-risk behavior is detected, the system triggers an "Instant Snapshot Backup" of affected files. Even if a threat bypasses initial blocking, you can perform a one-click restoration using protected backups, ensuring zero data loss.</p>
     </div>
   </div>
 </section>
 
-<!-- Usage Guide -->
-<section class="content-section" id="architecture">
-  <h2 class="section-title">Technical Specifications & Architecture</h2>
-  <ul class="section-content-ul">
-    <li>Core Engine: Built upon the robust HarmonyLib and MonoMod frameworks for stable, high-performance .NET method hooking.</li>
-    <li>Auditing & Logging:
-      <ul>
-        <li>Local Logs: Categorized logging into log.txt (General), warning.txt (Threats), ex.txt (Exceptions), and file_warning.txt (FIM).</li>
-        <li>Remote Syslog: Supports UDP forwarding (Port 514) to integrate with SIEM/SOC solutions (Default IP: 192.168.0.101).</li>
-      </ul>
-    </li>
-    <li>Licensing System:
-        <ul>
-          <li>RSA Encryption: Uses asymmetric encryption for secure license validation.</li>
-          <li>Hardware Binding: Binds the license to the server's CPU ProcessorId to prevent unauthorized copying.</li>
-          <li>Expiration Control: Built-in validity period checks to manage subscription lifecycles.</li>
-        </ul>
-    </li>
-  </ul>
-</section>
+<!-- Feature Spotlight -->
+<section class="spotlight-section">
+    <!-- Alert Feature -->
+    <div class="spotlight-row">
+        <div class="spotlight-text">
+            <h3>Intelligent Threat Detection</h3>
+            <p>
+                Upon detecting suspicious behavior, the system instantly identifies the threat source, including Hash, IP, and file path. Administrators are presented with clear, actionable options to Ignore, Delete, or Whitelist/Blacklist the process immediately.
+            </p>
+        </div>
+        <div class="spotlight-image">
+            <img src="assets/img/Ransomware_image02.png" alt="Threat Alert Dialog">
+        </div>
+    </div>
 
-<!-- Usage Guide -->
-<section class="content-section" id="architecture">
-  <h2 class="section-title">Deployment & Operations</h2>
-  <ul class="section-content-ul">
-    <li>Drop-in Installation: Simply deploy the DLLs to your application's bin directory.</li>
-    <li>Configuration: Manage settings via config.json to define license paths and log output directories.</li>
-    <li>Auto-Protection: The system automatically validates the license, initializes the Hook Engine, and starts File Watcher threads upon application startup.</li>
-    <li>Active Blocking: When an attack is intercepted, the attacker receives a "Blocked" response page displaying the specific attack type and stack trace, serving as a powerful deterrent.</li>
-  </ul>
+    <!-- Blacklist Feature -->
+    <div class="spotlight-row reverse">
+        <div class="spotlight-text">
+            <h3>Granular Access Control</h3>
+            <p>
+                Maintain complete control over your system's security with our comprehensive Black/White list management. Easily view, track, and manage allowed and blocked processes with detailed logs including file hashes and creation timestamps.
+            </p>
+        </div>
+        <div class="spotlight-image">
+            <img src="assets/img/Ransomware_image01.png" alt="Blacklist Management">
+        </div>
+    </div>
 </section>
-
-<section class="content-section" id="Why Choose AspNetWebShield?">
-  <h2 class="section-title">Why Choose AspNetWebShield?</h2>
-  <p class="section-content">"WAFs can be bypassed. RASP is always there."</p>
-  <ul class="section-content-ul">
-    <li>Visibility: Provides detailed Stack Traces for every blocked attack, allowing developers to pinpoint the exact vulnerability location in the code.</li>
-    <li>Precision: Uses behavioral analysis and API-level hooking rather than just regex signature matching, significantly reducing false positives.</li>
-    <li>Resilience: Features memory integrity checks to protect the protector.</li>
-  </ul>
-</section>
-
 
 <script>
 // Navbar shadow on scroll
